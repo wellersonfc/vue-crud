@@ -66,11 +66,37 @@ export default function userService () {
       }
     }
 
+    const getPaginacao = async (paginacao:number) => {
+      try {
+        let dados:any
+        await api.get(`users?page=${paginacao}`)
+          .then((resp) => dados = resp.data.data)
+          .catch((error) => console.log(error))
+        return dados
+      } catch (error) {
+        return error
+      }
+    }
+
+    const getFilter = async (filter:string, textoBusca:string) => {
+      try {
+        let dados:any
+        await api.get(`users?${filter}=${textoBusca} `)
+          .then((resp) => dados = resp.data.data)
+          .catch((error) => console.log(error))
+        return dados
+      } catch (error) {
+        return error
+      }
+    }
+
     return {
       createrUser,
       deleteUser,
       updateUser,
       getUser,
-      getUserId
+      getUserId,
+      getPaginacao,
+      getFilter
     }
 }

@@ -15,7 +15,6 @@
           Quasar App
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -54,6 +53,12 @@ const linksList = [
     caption: '',
     icon: 'home',
     route: { name: 'home' }
+  },
+  {
+    title: 'Cadastro de usuários',
+    caption: '',
+    icon: 'add',
+    route: { name: 'formularioUsuario' }
   }
 ]
 

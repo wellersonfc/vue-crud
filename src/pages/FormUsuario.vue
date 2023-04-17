@@ -40,7 +40,7 @@
           style="width: 250px"
           behavior="dialog"
           emit-value
-        map-options
+          map-options
         />
 
         <div class="col-12">
